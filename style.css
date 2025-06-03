@@ -1,0 +1,98 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to right top, #7f7fd5, #86a8e7, #91eae4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
+}
+
+.game-container {
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 10px;
+    font-size: 2.5rem;
+}
+
+.turn-indicator {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 10px 20px;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    gap: 10px;
+    margin: 20px auto;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    font-size: 2.5rem;
+    color: #333;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.cell:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.cell.winning {
+    background-color: #4caf50;
+    color: #fff;
+    animation: flash 0.8s infinite;
+}
+
+@keyframes flash {
+
+    0%,
+    100% {
+        box-shadow: 0 0 10px #fff;
+    }
+
+    50% {
+        box-shadow: 0 0 20px #4caf50;
+    }
+}
+
+#status {
+    font-size: 1.3rem;
+    margin-top: 10px;
+    min-height: 30px;
+}
+
+#reset {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #2196f3;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#reset:hover {
+    background-color: #0b7dda;
+}
